@@ -31,23 +31,14 @@ builder.Services.AddSwaggerGen(c =>
         Description = "JWT Authorization header using the Bearer scheme. Enter 'Bearer' [space] and then your token",
         In = ParameterLocation.Header,
         Type = SecuritySchemeType.Http,
-        Scheme = "bearer",
+        Scheme = "Bearer",
         BearerFormat = "JWT"
     });
 
-    c.AddSecurityRequirement(new OpenApiSecurityRequirement
-{
+    c.AddSecurityRequirement(document => new OpenApiSecurityRequirement
     {
-        new OpenApiSecurityScheme
-        {
-            Scheme = "bearer",
-            Name = "Bearer",
-            In = ParameterLocation.Header,
-            Type = SecuritySchemeType.Http
-        },
-        new List<string>()
-    }
-});
+        [new OpenApiSecuritySchemeReference("Bearer", document)] = []   
+    });
 });
 
 // Database configuration
@@ -65,7 +56,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 // JWT Authentication
 var jwtSettings = builder.Configuration.GetSection("Jwt");
-var secretKey = jwtSettings["SecretKey"] ?? "YourSuperSecretKeyHere123!@#";
+var secretKey = jwtSettings["SecretKey"] ?? "YourSuperSecretKeyHere123!@#MustBe32CharactersOrMoreForSecurity";
 
 builder.Services.AddAuthentication(options =>
 {

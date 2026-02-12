@@ -247,7 +247,7 @@ namespace SLM.Infrastructure.Services
         private string GenerateJwtToken(User user, List<string> roles)
         {
             var securityKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(_configuration["Jwt:SecretKey"] ?? "YourSuperSecretKeyHere123!@#"));
+                Encoding.UTF8.GetBytes(_configuration["Jwt:SecretKey"] ?? "YourSuperSecretKeyHere123!@#MustBe32CharactersOrMoreForSecurity"));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new List<Claim>
