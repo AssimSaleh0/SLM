@@ -1,6 +1,6 @@
 ﻿namespace SLM.Core.Enums
 {
-    public enum UserRole
+    public enum Enums
     {
         Student = 1,
         AcademicAdvisor = 2,

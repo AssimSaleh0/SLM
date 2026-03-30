@@ -1,4 +1,4 @@
-﻿using SLM.Core.DTOs.Financial;
+﻿ using SLM.Core.DTOs.Financial;
 
 namespace SLM.Core.Interfaces
 {
@@ -10,7 +10,7 @@ namespace SLM.Core.Interfaces
         Task<BudgetSummaryDto> GetBudgetSummaryAsync(int userId);
         Task<bool> UpdateBudgetCategoryAsync(int categoryId, int userId, UpdateBudgetCategoryRequest request);
         Task<bool> DeleteBudgetCategoryAsync(int categoryId, int userId);
-        Task<bool> UpdateSpentAmountAsync(int categoryId, decimal amount);
+        Task UpdateSpentAmountAsync(int categoryId, decimal amount);
         Task<List<BudgetCategoryDto>> GetOverBudgetCategoriesAsync(int userId);
     }
 }

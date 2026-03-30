@@ -106,6 +106,10 @@ builder.Services.AddScoped<IGradeService, GradeService>();
 builder.Services.AddScoped<IDegreeProgramService, DegreeProgramService>();
 builder.Services.AddScoped<IStudyPlanService, StudyPlanService>();
 
+//Financial Services
+builder.Services.AddScoped<IBudgetService, BudgetService>();
+builder.Services.AddScoped<ITransactionService, TransactionService>();
+
 
 var app = builder.Build();
 

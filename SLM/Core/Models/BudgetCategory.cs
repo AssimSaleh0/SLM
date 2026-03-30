@@ -7,6 +7,9 @@ namespace SLM.Core.Models
         public string? Description { get; set; }
         public decimal AllocatedAmount { get; set; }
         public decimal SpentAmount { get; set; }
+
+        public bool IsActive { get; set; } = true;
+
         public string? IconName { get; set; }
         public string? ColorCode { get; set; }
 

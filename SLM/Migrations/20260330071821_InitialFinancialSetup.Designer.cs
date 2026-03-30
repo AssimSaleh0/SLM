@@ -12,8 +12,8 @@ using SLM.Infrastructure.Data;
 namespace SLM.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260319132842_FixRoleSeedData")]
-    partial class FixRoleSeedData
+    [Migration("20260330071821_InitialFinancialSetup")]
+    partial class InitialFinancialSetup
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -222,6 +222,9 @@ namespace SLM.Migrations
                     b.Property<string>("IconName")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -1256,7 +1259,7 @@ namespace SLM.Migrations
                     b.HasOne("SLM.Core.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("BudgetCategory");
