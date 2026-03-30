@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SLM.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using SLM.Infrastructure.Data;
 namespace SLM.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260319125932_AddFinancialTables")]
+    partial class AddFinancialTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -770,7 +773,7 @@ namespace SLM.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedAt = new DateTime(2026, 3, 19, 12, 59, 31, 390, DateTimeKind.Utc).AddTicks(5388),
                             Description = "Student user",
                             IsDeleted = false,
                             Name = "Student"
@@ -778,7 +781,7 @@ namespace SLM.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedAt = new DateTime(2026, 3, 19, 12, 59, 31, 390, DateTimeKind.Utc).AddTicks(5957),
                             Description = "Academic advisor",
                             IsDeleted = false,
                             Name = "AcademicAdvisor"
@@ -786,7 +789,7 @@ namespace SLM.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedAt = new DateTime(2026, 3, 19, 12, 59, 31, 390, DateTimeKind.Utc).AddTicks(5959),
                             Description = "Career counselor",
                             IsDeleted = false,
                             Name = "CareerCounselor"
@@ -794,7 +797,7 @@ namespace SLM.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedAt = new DateTime(2026, 3, 19, 12, 59, 31, 390, DateTimeKind.Utc).AddTicks(5961),
                             Description = "System administrator",
                             IsDeleted = false,
                             Name = "Administrator"
